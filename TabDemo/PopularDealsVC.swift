@@ -25,6 +25,11 @@ class PopularDealsVC: DealsVC{
                     self.arrDealsData = dataInside["data"] as! [[String : Any]]
                 }
                 print(self.arrDealsData)
+            }else{
+                let alertController = UIAlertController(title: "Unable Process your request.",  message: "Error", preferredStyle:.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { action -> Void in
+                })
+               self.present(alertController, animated: true, completion: nil)
             }
             self.hideActivityIndicator()
             self.tblProd.reloadSections(IndexSet(integersIn: 0...0), with: UITableViewRowAnimation.bottom)
